@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #0f18c3;
+}
+
+.logo img {
+  height: 40px; /* Настройте размер логотипа */
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul li {
+  margin: 0 15px;
+}
+
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav ul li a:hover {
+  text-decoration: underline;
+}
