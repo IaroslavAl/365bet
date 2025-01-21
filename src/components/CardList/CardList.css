@@ -1,0 +1,18 @@
+.cardTitle {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 16px;
+    justify-content: center;
+    padding: 16px;
+}
+
+.card-list > :first-child {
+    grid-column: span 3;
+}

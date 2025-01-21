@@ -1,4 +1,8 @@
-.card {
+/*===============*/
+/*Vertical Card*/
+/*===============*/
+
+.verticalCard {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,13 +10,12 @@
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 300px;
-    height: 578px;
-    margin: 16px;
+    height: 580px;
     overflow: hidden;
     background-color: #fff;
 }
 
-.card_image-container {
+.verticalImageContainer {
     width: calc(100% - 16px);
     position: relative;
     padding-top: 66.66%;
@@ -22,7 +25,7 @@
     box-sizing: border-box;
 }
 
-.card_image {
+.verticalCardImage {
     position: absolute;
     top: 0;
     left: 0;
@@ -31,17 +34,17 @@
     object-fit: cover;
 }
 
-.card_title {
+.verticalCardTitle {
     color: #0a0a0a;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 550;
     font-size: 16px;
-    line-height: 140%;
+    line-height: 1.4;
     margin: 8px 16px 16px 16px;
     text-align: left;
 }
 
-.card_text {
+.verticalCardText {
     color: #69707F;
     text-align: left;
     font-weight: 400;
@@ -49,4 +52,47 @@
     line-height: 1.4;
     padding: 0 16px 16px;
     word-wrap: break-word;
+}
+
+/*===============*/
+/*Horizontal Card*/
+/*===============*/
+
+.horizontalCard {
+    width: 932px;
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 16px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.horizontalCardImage {
+    width: 477px;
+    height: 318px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.horizontalCardTitle {
+    color: #0a0a0a;
+    font-style: normal;
+    font-weight: 550;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 10px 24px 0 8px;
+}
+
+.horizontalCardText {
+    color: #69707F;
+    text-align: left;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 24px 0 8px;
 }

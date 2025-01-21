@@ -5,16 +5,60 @@ Card.propTypes = {
     imageSrc: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
+    isHorizontal: PropTypes.bool.isRequired
 }
 
-export default function Card({imageSrc, title, text}) {
+VerticalCard.propTypes = {
+    imageSrc: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired
+}
+
+HorizontalCard.propTypes = {
+    imageSrc: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired
+}
+
+export function Card({imageSrc, title, text, isHorizontal}) {
     return (
-        <div className="card">
-            <div className="card_image-container">
-                <img src={imageSrc} alt={title} className="card_image"/>
+        <>
+            {isHorizontal && <HorizontalCard
+                imageSrc={imageSrc}
+                title={title}
+                text={text}
+            />}
+            {!isHorizontal && <VerticalCard
+                imageSrc={imageSrc}
+                title={title}
+                text={text}
+            />}
+        </>
+    )
+}
+
+function VerticalCard({imageSrc, title, text}) {
+    return (
+        <div className="verticalCard">
+            <div className="verticalImageContainer">
+                <img src={imageSrc} alt={title} className="verticalCardImage"/>
             </div>
-            <h3 className="card_title">{title}</h3>
-            <p className="card_text">{text}</p>
+            <h3 className="verticalCardTitle">{title}</h3>
+            <p className="verticalCardText">{text}</p>
+        </div>
+    )
+}
+
+function HorizontalCard({imageSrc, title, text}) {
+    return (
+        <div className="horizontalCard">
+            <div>
+                <h3 className="horizontalCardTitle">{title}</h3>
+                <p className="horizontalCardText">{text}</p>
+            </div>
+            <div className="horizontalImageContainer">
+                <img src={imageSrc} alt={title} className="horizontalCardImage"/>
+            </div>
         </div>
     )
 }
