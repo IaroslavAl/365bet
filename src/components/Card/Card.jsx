@@ -40,7 +40,7 @@ export function Card({imageSrc, title, text, isHorizontal}) {
 function VerticalCard({imageSrc, title, text}) {
     return (
         <div className="verticalCard">
-            <div className="verticalImageContainer">
+            <div className="verticalCardImageContainer">
                 <img src={imageSrc} alt={title} className="verticalCardImage"/>
             </div>
             <h3 className="verticalCardTitle">{title}</h3>
@@ -52,11 +52,11 @@ function VerticalCard({imageSrc, title, text}) {
 function HorizontalCard({imageSrc, title, text}) {
     return (
         <div className="horizontalCard">
-            <div>
+            <div className="horizontalCardTextContainer">
                 <h3 className="horizontalCardTitle">{title}</h3>
                 <p className="horizontalCardText">{text}</p>
             </div>
-            <div className="horizontalImageContainer">
+            <div className="horizontalCardImageContainer">
                 <img src={imageSrc} alt={title} className="horizontalCardImage"/>
             </div>
         </div>

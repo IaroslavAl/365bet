@@ -1,9 +1,26 @@
 import PropTypes from "prop-types";
+import { useState, useEffect } from "react";
 import {useInView} from "react-intersection-observer";
 import "./CardList.css";
 import {Card} from "../Card/Card.jsx";
 
 export default function CardList({cards, title}) {
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 880);
+
+    // Обновление состояния при изменении размера окна
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 880); // Мобильный экран, если ширина <= 768px
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        // Удаление обработчика при размонтировании
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
     return (
         <>
             {title && <h2 className="cardTitle">{title}</h2>}
@@ -12,7 +29,7 @@ export default function CardList({cards, title}) {
                     <LazyCard
                         key={index}
                         card={card}
-                        isHorizontal={index === 0}
+                        isHorizontal={!isMobile && index === 0}
                     />
                 ))}
             </div>
@@ -48,6 +65,7 @@ CardList.propTypes = {
             text: PropTypes.string.isRequired,
         })
     ).isRequired,
+    title: PropTypes.string.isRequired,
 }
 
 LazyCard.propTypes = {
