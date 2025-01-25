@@ -1,64 +1,65 @@
 import "./Card.css"
 import PropTypes from "prop-types"
 
-Card.propTypes = {
-    imageSrc: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-    isHorizontal: PropTypes.bool.isRequired
-}
-
-VerticalCard.propTypes = {
-    imageSrc: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired
-}
-
-HorizontalCard.propTypes = {
-    imageSrc: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired
-}
-
-export function Card({imageSrc, title, text, isHorizontal}) {
+export function Card({card, isHorizontal}) {
     return (
         <>
-            {isHorizontal && <HorizontalCard
-                imageSrc={imageSrc}
-                title={title}
-                text={text}
-            />}
-            {!isHorizontal && <VerticalCard
-                imageSrc={imageSrc}
-                title={title}
-                text={text}
-            />}
+            {isHorizontal && <HorizontalCard card={card}/>}
+            {!isHorizontal && <VerticalCard card={card} />}
         </>
     )
 }
 
-function VerticalCard({imageSrc, title, text}) {
+function VerticalCard({card}) {
     return (
         <div className="verticalCard">
             <div className="verticalCardImageContainer">
-                <img src={imageSrc} alt={title} className="verticalCardImage"/>
+                <img src={card.imageSrc} alt={card.title} className="verticalCardImage"/>
             </div>
-            <h3 className="verticalCardTitle">{title}</h3>
-            <p className="verticalCardText">{text}</p>
+            <h3 className="verticalCardTitle">{card.title}</h3>
+            <p className="verticalCardText">{card.text}</p>
         </div>
     )
 }
 
-function HorizontalCard({imageSrc, title, text}) {
+function HorizontalCard({card}) {
     return (
         <div className="horizontalCard">
             <div className="horizontalCardTextContainer">
-                <h3 className="horizontalCardTitle">{title}</h3>
-                <p className="horizontalCardText">{text}</p>
+                <h3 className="horizontalCardTitle">{card.title}</h3>
+                <p className="horizontalCardText">{card.text}</p>
             </div>
             <div className="horizontalCardImageContainer">
-                <img src={imageSrc} alt={title} className="horizontalCardImage"/>
+                <img src={card.imageSrc} alt={card.title} className="horizontalCardImage"/>
             </div>
         </div>
     )
+}
+
+Card.propTypes = {
+    card: PropTypes.shape({
+        imageSrc: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        text: PropTypes.string.isRequired,
+        details: PropTypes.string.isRequired
+    }).isRequired,
+    isHorizontal: PropTypes.bool.isRequired
+}
+
+VerticalCard.propTypes = {
+    card: PropTypes.shape({
+        imageSrc: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        text: PropTypes.string.isRequired,
+        details: PropTypes.string.isRequired
+    }).isRequired
+}
+
+HorizontalCard.propTypes = {
+    card: PropTypes.shape({
+        imageSrc: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        text: PropTypes.string.isRequired,
+        details: PropTypes.string.isRequired
+    }).isRequired
 }

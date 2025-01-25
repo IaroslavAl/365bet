@@ -1,0 +1,18 @@
+.cardDetailsTitle {
+    max-width: 932px;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+.cardDetails {
+    max-width: 932px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin-bottom: 32px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
