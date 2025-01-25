@@ -1,7 +1,12 @@
-import logo from "/logo.svg"
 import "./Header.css"
+import logo from "/logo.svg"
+import Button from "../Button/Button.jsx"
+import {Link, useLocation} from 'react-router-dom';
 
 export default function Header() {
+    const location = useLocation()
+    const activeTab = location.pathname.substring(1)
+
     return (
         <header className="header">
             <div className="logo">
@@ -10,16 +15,24 @@ export default function Header() {
             <nav className="nav">
                 <ul>
                     <li>
-                        <a href="#football">Футбол</a>
+                        <Link to="">
+                            <Button isActive={activeTab === ""}>Футбол</Button>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#rpl">РПЛ</a>
+                        <Link to="/rpl">
+                            <Button isActive={activeTab === "rpl"}>РПЛ</Button>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#la-liga">Ла Лига</a>
+                        <Link to="/la-liga">
+                            <Button isActive={activeTab === "la-liga"}>Ла Лига</Button>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#apl">АПЛ</a>
+                        <Link to="/apl">
+                            <Button isActive={activeTab === "apl"}>АПЛ</Button>
+                        </Link>
                     </li>
                 </ul>
             </nav>

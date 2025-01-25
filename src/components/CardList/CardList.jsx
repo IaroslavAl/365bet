@@ -1,7 +1,7 @@
-import PropTypes from "prop-types";
-import { useState, useEffect } from "react";
-import {useInView} from "react-intersection-observer";
 import "./CardList.css";
+import PropTypes from "prop-types";
+import {useState, useEffect} from "react";
+import {useInView} from "react-intersection-observer";
 import {Card} from "../Card/Card.jsx";
 
 export default function CardList({cards, title}) {
@@ -10,16 +10,15 @@ export default function CardList({cards, title}) {
     // Обновление состояния при изменении размера окна
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth <= 880); // Мобильный экран, если ширина <= 768px
-        };
+            setIsMobile(window.innerWidth <= 880)
+        }
 
         window.addEventListener("resize", handleResize);
 
-        // Удаление обработчика при размонтировании
         return () => {
             window.removeEventListener("resize", handleResize);
-        };
-    }, []);
+        }
+    }, [])
 
     return (
         <>

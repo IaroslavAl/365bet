@@ -1,0 +1,39 @@
+.button {
+    padding: 0.5rem 1.5rem;
+    border: 0 solid #3e6ae1;
+    border-radius: 5px;
+    background: transparent;
+    color: #3e6ae1;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    font-size: 1.75rem;
+    white-space: nowrap;
+}
+
+.button:hover {
+    color: #fff;
+    opacity: 0.8;
+}
+
+.button:disabled {
+    border-color: #ccc;
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.button.active {
+    color: #fff;
+}
+
+@media (max-width: 880px) {
+    .button {
+        font-size: 1.4rem; /* Еще меньше на экранах меньше 768px */
+    }
+}
+
+@media (max-width: 600px) {
+    .button {
+        font-size: 1.1rem; /* Еще меньше на экранах меньше 480px */
+    }
+}
