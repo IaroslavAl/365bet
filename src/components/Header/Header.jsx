@@ -1,7 +1,7 @@
 import "./Header.css"
 import logo from "/logo.svg"
 import Button from "../Button/Button.jsx"
-import {Link, useLocation} from 'react-router-dom'
+import {Link, useLocation} from "react-router-dom"
 
 export default function Header() {
     const location = useLocation()
