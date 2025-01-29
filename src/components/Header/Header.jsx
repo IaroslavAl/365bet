@@ -14,7 +14,7 @@ export default function Header() {
             </div>
             <nav className="nav">
                 <ul>
-                    <li><Link to=""><Button isActive={activeTab === ""}>Футбол</Button></Link></li>
+                    <li><Link to=""><Button isActive={!["rpl", "la-liga", "apl"].includes(activeTab)}>Футбол</Button></Link></li>
                     <li><Link to="/rpl"><Button isActive={activeTab === "rpl"}>РПЛ</Button></Link></li>
                     <li><Link to="/la-liga"><Button isActive={activeTab === "la-liga"}>Ла Лига</Button></Link></li>
                     <li><Link to="/apl"><Button isActive={activeTab === "apl"}>АПЛ</Button></Link></li>

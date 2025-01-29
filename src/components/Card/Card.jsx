@@ -11,10 +11,15 @@ export function Card({card, isHorizontal}) {
 }
 
 function VerticalCard({card}) {
+    const images = Object.fromEntries(
+        Object.entries(import.meta.glob('/src/assets/images/*.jpg', { eager: true }))
+            .map(([path, module]) => [path.replace('/src/assets/images/', ''), module.default])
+    )
+
     return (
         <div className="verticalCard">
             <div className="verticalCardImageContainer">
-                <img src={card.imageSrc} alt={card.title} className="verticalCardImage"/>
+                <img src={images[`${card.id}.jpg`]} alt={`Image ${card.id}`} className="verticalCardImage"/>
             </div>
             <h3 className="verticalCardTitle">{card.title}</h3>
             <p className="verticalCardText">{card.text}</p>
@@ -23,6 +28,11 @@ function VerticalCard({card}) {
 }
 
 function HorizontalCard({card}) {
+    const images = Object.fromEntries(
+        Object.entries(import.meta.glob('/src/assets/images/*.jpg', { eager: true }))
+            .map(([path, module]) => [path.replace('/src/assets/images/', ''), module.default])
+    )
+
     return (
         <div className="horizontalCard">
             <div className="horizontalCardTextContainer">
@@ -30,7 +40,7 @@ function HorizontalCard({card}) {
                 <p className="horizontalCardText">{card.text}</p>
             </div>
             <div className="horizontalCardImageContainer">
-                <img src={card.imageSrc} alt={card.title} className="horizontalCardImage"/>
+                <img src={images[`${card.id}.jpg`]} alt={`Image ${card.id}`} className="horizontalCardImage"/>
             </div>
         </div>
     )
@@ -38,7 +48,7 @@ function HorizontalCard({card}) {
 
 Card.propTypes = {
     card: PropTypes.shape({
-        imageSrc: PropTypes.string.isRequired,
+        id: PropTypes.number,
         title: PropTypes.string.isRequired,
         text: PropTypes.string.isRequired,
         details: PropTypes.string.isRequired
@@ -48,7 +58,7 @@ Card.propTypes = {
 
 VerticalCard.propTypes = {
     card: PropTypes.shape({
-        imageSrc: PropTypes.string.isRequired,
+        id: PropTypes.number,
         title: PropTypes.string.isRequired,
         text: PropTypes.string.isRequired,
         details: PropTypes.string.isRequired
@@ -57,7 +67,7 @@ VerticalCard.propTypes = {
 
 HorizontalCard.propTypes = {
     card: PropTypes.shape({
-        imageSrc: PropTypes.string.isRequired,
+        id: PropTypes.number,
         title: PropTypes.string.isRequired,
         text: PropTypes.string.isRequired,
         details: PropTypes.string.isRequired

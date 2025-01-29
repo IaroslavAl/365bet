@@ -3,7 +3,7 @@ import Header from "./components/Header/Header"
 import CardList from "./pages/CardList/CardList"
 import CardDetails from "./pages/CardDetails/CardDetails.jsx"
 import {BrowserRouter as Router, Route, Routes, useLocation} from "react-router-dom"
-import {getCards} from "../Mocks.js"
+import {getCards} from "../Cards.js"
 import {useEffect} from "react"
 
 export default function App() {

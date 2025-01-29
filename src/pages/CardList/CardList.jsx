@@ -57,7 +57,7 @@ function LazyCard({card, isHorizontal}) {
 CardList.propTypes = {
     cards: PropTypes.arrayOf(
         PropTypes.shape({
-            imageSrc: PropTypes.string.isRequired,
+            id: PropTypes.number,
             title: PropTypes.string.isRequired,
             text: PropTypes.string.isRequired,
             details: PropTypes.string.isRequired
@@ -68,7 +68,7 @@ CardList.propTypes = {
 
 LazyCard.propTypes = {
     card: PropTypes.shape({
-        imageSrc: PropTypes.string.isRequired,
+        id: PropTypes.number,
         title: PropTypes.string.isRequired,
         text: PropTypes.string.isRequired,
         details: PropTypes.string.isRequired
