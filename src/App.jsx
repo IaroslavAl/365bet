@@ -2,6 +2,7 @@ import "./App.css"
 import Header from "./components/Header/Header"
 import CardList from "./pages/CardList/CardList"
 import CardDetails from "./pages/CardDetails/CardDetails.jsx"
+import useYandexMetrika from "./hooks/useYandexMetrika.jsx";
 import {BrowserRouter as Router, Route, Routes, useLocation} from "react-router-dom"
 import {getCards} from "../Cards.js"
 import {useEffect} from "react"
@@ -20,6 +21,8 @@ function MainApp() {
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [location])
+
+    useYandexMetrika()
 
     return (
         <>
