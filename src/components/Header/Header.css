@@ -16,11 +16,19 @@
     height: 50px;
 }
 
+.nav {
+    display: flex;
+}
+
 .nav ul {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
+}
+
+.nav ul li {
+    margin-right: 16px;
 }
 
 .nav ul li a {
@@ -30,4 +38,46 @@
 
 .nav ul li a:hover {
     text-decoration: underline;
+}
+
+.burger-menu {
+    display: none;
+    font-size: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .burger-menu {
+        display: block;
+    }
+
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #0f18c3;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 0 16px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav.open {
+        display: flex;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav ul li {
+        margin: 8px 0;
+    }
 }
