@@ -2,7 +2,8 @@ import "./App.css"
 import Header from "./components/Header/Header"
 import CardList from "./pages/CardList/CardList"
 import CardDetails from "./pages/CardDetails/CardDetails.jsx"
-import useYandexMetrika from "./hooks/useYandexMetrika.jsx";
+import YandexMetrika from "./hooks/YandexMetrika.jsx"
+import GoogleAnalytics from "./hooks/GoogleAnalytics.jsx"
 import {BrowserRouter as Router, Route, Routes, useLocation} from "react-router-dom"
 import {getCards} from "../Cards.js"
 import {useEffect} from "react"
@@ -22,7 +23,8 @@ function MainApp() {
         window.scrollTo(0, 0)
     }, [location])
 
-    useYandexMetrika()
+    YandexMetrika()
+    GoogleAnalytics()
 
     return (
         <>
