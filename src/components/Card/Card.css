@@ -54,7 +54,6 @@ a {
 /*===============*/
 
 .horizontalCard {
-    max-width: 932px;
     height: 350px;
     display: flex;
     flex-direction: row;
@@ -69,6 +68,7 @@ a {
 .horizontalCardImageContainer {
     flex: 1;
     display: flex;
+    justify-content: flex-end;
     box-sizing: border-box;
     overflow: hidden;
 }
