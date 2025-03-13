@@ -11,15 +11,15 @@ export function Card({card, isHorizontal}) {
 }
 
 function VerticalCard({card}) {
-    const images = Object.fromEntries(
-        Object.entries(import.meta.glob('/src/assets/images/*.jpg', { eager: true }))
-            .map(([path, module]) => [path.replace('/src/assets/images/', ''), module.default])
+    const cardImages = Object.fromEntries(
+        Object.entries(import.meta.glob('/src/assets/cardImages/*.jpg', { eager: true }))
+            .map(([path, module]) => [path.replace('/src/assets/cardImages/', ''), module.default])
     )
 
     return (
         <div className="verticalCard">
             <div className="verticalCardImageContainer">
-                <img src={images[`${card.id}.jpg`]} alt={`Image ${card.id}`} className="verticalCardImage"/>
+                <img src={cardImages[`${card.id}.jpg`]} alt={`Image ${card.id}`} className="verticalCardImage"/>
             </div>
             <h3 className="verticalCardTitle">{card.title}</h3>
             <p className="verticalCardText">{card.text}</p>
@@ -28,9 +28,9 @@ function VerticalCard({card}) {
 }
 
 function HorizontalCard({card}) {
-    const images = Object.fromEntries(
-        Object.entries(import.meta.glob('/src/assets/images/*.jpg', { eager: true }))
-            .map(([path, module]) => [path.replace('/src/assets/images/', ''), module.default])
+    const cardImages = Object.fromEntries(
+        Object.entries(import.meta.glob('/src/assets/cardImages/*.jpg', { eager: true }))
+            .map(([path, module]) => [path.replace('/src/assets/cardImages/', ''), module.default])
     )
 
     return (
@@ -40,7 +40,7 @@ function HorizontalCard({card}) {
                 <p className="horizontalCardText">{card.text}</p>
             </div>
             <div className="horizontalCardImageContainer">
-                <img src={images[`${card.id}.jpg`]} alt={`Image ${card.id}`} className="horizontalCardImage"/>
+                <img src={cardImages[`${card.id}.jpg`]} alt={`Image ${card.id}`} className="horizontalCardImage"/>
             </div>
         </div>
     )
