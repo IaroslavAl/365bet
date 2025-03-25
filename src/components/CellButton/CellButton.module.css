@@ -1,0 +1,54 @@
+.button {
+    padding: 0.5rem 1.5rem;
+    border: 2px solid #0f18c3; /* Изменил цвет границы на #0f18c3 */
+    border-radius: 5px;
+    background: transparent;
+    color: #0f18c3; /* Основной цвет текста изменен на #0f18c3 */
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    font-size: 1.25rem;
+    white-space: nowrap;
+}
+
+.button:hover {
+    background-color: #0f18c3; /* Фон при наведении */
+    color: #fff; /* Текст белый при наведении */
+    opacity: 1; /* Убрал уменьшение opacity */
+}
+
+.button:disabled {
+    border-color: #ccc;
+    color: #ccc;
+    cursor: not-allowed;
+    background: transparent; /* Добавил прозрачный фон для disabled */
+}
+
+.button.active {
+    background-color: #0f18c3; /* Активный фон */
+    color: #fff; /* Активный текст */
+}
+
+@media (max-width: 768px) {
+    .button {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .button {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .button {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .button {
+        font-size: 0.6rem;
+    }
+}

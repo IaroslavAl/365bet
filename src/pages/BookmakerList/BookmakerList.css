@@ -1,0 +1,16 @@
+.bookmakerTitle {
+    text-align: center;
+    font-size: 2rem;
+    margin: 32px 16px 16px;
+}
+
+.bookmaker-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 16px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
