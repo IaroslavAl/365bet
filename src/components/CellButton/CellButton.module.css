@@ -52,3 +52,9 @@
         font-size: 0.6rem;
     }
 }
+
+@media (max-width: 350px) {
+    .button {
+        font-size: 0.5rem;
+    }
+}

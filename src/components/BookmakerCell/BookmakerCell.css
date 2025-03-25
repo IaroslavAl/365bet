@@ -73,3 +73,9 @@ li {
         width: 100px;
     }
 }
+
+@media (max-width: 350px) {
+    .bookmakerCellImage {
+        width: 80px;
+    }
+}
