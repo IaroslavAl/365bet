@@ -1,5 +1,5 @@
 import "./BookmakerCell.css"
-import {BookmakerModel} from "../../../BookmakerModels";
+import {BookmakerModel} from "../../../BookmakerModel";
 import CellButton from "../CellButton/CellButton.jsx"
 import {Link} from "react-router-dom";
 
@@ -24,7 +24,7 @@ export default function BookmakerCell({bookmaker}: { bookmaker: BookmakerModel }
                 <li><Link to={`${bookmaker.id}`}><CellButton
                     isActive={true}>О букмекере</CellButton></Link></li>
                 <li><Link to={`${bookmaker.url}`}><CellButton
-                    isActive={true}>Получить бонус</CellButton></Link></li>
+                    isActive={true}>Перейти на сайт</CellButton></Link></li>
             </div>
         </div>
     );

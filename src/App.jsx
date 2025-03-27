@@ -9,7 +9,7 @@ import GoogleAnalytics from "./hooks/GoogleAnalytics.jsx"
 import {BrowserRouter as Router, Route, Routes, useLocation} from "react-router-dom"
 import {getCards} from "../Cards.js"
 import {useEffect} from "react"
-import {bookmakerModels} from "../BookmakerModels.ts";
+import {foreignBookmakers, legalBookmakers} from "../Bookmakers.ts";
 
 export default function App() {
     return (
@@ -37,17 +37,11 @@ function MainApp() {
                     <Route path="/" element={<CardList cards={getCards()} title="Прогнозы на футбол" />} />
                     <Route path="/:id" element={<CardDetails />} />
 
-                    <Route path="/rpl" element={<CardList cards={getCards("rpl")} title="Прогнозы на РПЛ (чемпионат России)" />} />
-                    <Route path="/rpl/:id" element={<CardDetails />} />
+                    <Route exact path="/legal-bookmakers" element={<BookmakerList bookmakers={legalBookmakers} title={"Легальные букмекеры"} />} />
+                    <Route path="/legal-bookmakers/:id" element={<BookmakerDetails />} />
 
-                    <Route path="/la-liga" element={<CardList cards={getCards("la-liga")} title="Прогнозы на Ла Лигу (чемпионат Испании)" />} />
-                    <Route path="/la-liga/:id" element={<CardDetails />} />
-
-                    <Route path="/apl" element={<CardList cards={getCards("apl")} title="Прогнозы на АПЛ (чемпионат Англии)" />} />
-                    <Route path="/apl/:id" element={<CardDetails />} />
-
-                    <Route exact path="/bookmakers" element={<BookmakerList bookmakers={bookmakerModels} title={"Букмекеры"} />} />
-                    <Route path="/bookmakers/:id" element={<BookmakerDetails />} />
+                    <Route exact path="/foreign-bookmakers" element={<BookmakerList bookmakers={foreignBookmakers} title={"Зарубежные букмекеры"} />} />
+                    <Route path="/foreign-bookmakers/:id" element={<BookmakerDetails />} />
                 </Routes>
             </main>
         </>

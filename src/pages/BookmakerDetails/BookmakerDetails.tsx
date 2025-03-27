@@ -2,7 +2,7 @@ import "./BookmakerDetails.css"
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
-import {getBookmaker} from "../../../BookmakerModels"
+import {getBookmaker} from "../../../Bookmakers"
 import {useParams} from "react-router-dom"
 
 export default function BookmakerDetails() {
